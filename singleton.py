@@ -12,15 +12,16 @@ def Singleton(klass):
     return klass._instance
 
 class B(A):
-    pass
+    _instance = None
 
 
 class C(A):
-    pass
+    _instance = None
 
 def clase(klass, num_hilo):
     b = Singleton(klass)
-    print(id(b), b.foo(), " numero de hilo ", num_hilo)
+    a = str(id(b)) + " " + str(b.foo()) + " numero de hilo " + str(num_hilo)
+    print(a)
 
 def hilo_1():
     contador = 0
